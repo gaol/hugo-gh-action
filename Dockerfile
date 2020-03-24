@@ -26,7 +26,4 @@ VOLUME /output
 
 WORKDIR /src
 
-EXPOSE 1313
-
-ENTRYPOINT ["/usr/local/sbin/hugo", "--source", "/src", "--destination", "/output"]
-
+CMD ["/usr/local/sbin/hugo"]
