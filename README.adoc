@@ -22,7 +22,7 @@ jobs:
           submodules: true  # <-- this is needed to checkout theme which normally come from separate git repository
 
       - name: Build the website to public directory
-        uses: gaol/hugo-gh-action@v1.3
+        uses: gaol/hugo-gh-action@v1.2
 
       - name: Deploy the generated website from public sub directory to master branch
         uses: peaceiris/actions-gh-pages@v3
