@@ -4,3 +4,6 @@ description: 'Action to generate static website using hugo by supporting AsciiDo
 runs:
   using: 'docker'
   image: 'Dockerfile'
+branding:
+  icon: 'package'  
+  color: 'blue'
