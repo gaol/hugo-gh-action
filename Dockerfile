@@ -21,9 +21,4 @@ RUN tar -xf /tmp/${HUGO_ID}_Linux-64bit.tar.gz -C /tmp \
     && rm -rf /tmp/LICENSE.md \
     && rm -rf /tmp/README.md
 
-VOLUME /src
-VOLUME /output
-
-WORKDIR /src
-
-CMD ["/usr/local/sbin/hugo"]
+ENTRYPOINT ["/usr/local/sbin/hugo"]

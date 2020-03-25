@@ -1,19 +1,6 @@
 # action.yml
 name: 'Hugo Asciidoctor Action'
 description: 'Action to generate static website using hugo by supporting AsciiDoc format'
-inputs:
-  src_dir:
-    description: 'source directory to generate the website from'
-    required: false
-    default: '.'
-  out_dir:
-    description: 'output directory to generate the website to'
-    required: false
-    default: './public'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.src_dir }}
-    - ${{ inputs.out_dir }}
-
