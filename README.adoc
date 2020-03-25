@@ -1,0 +1,35 @@
+= hugo-gh-action
+The Docker container based github action to generate static website using hugo and asciidoctor
+
+== Example usage
+
+.Example workflow to generate the website from current directory
+[soruce, yaml]
+----
+name: Website Generator
+on:
+  push:
+    branches:
+      - source   # for personal github pages, master branch is used for website, source branch can be used for the source.
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout source to workplace
+        uses: actions/checkout@v2
+        with:
+          submodules: true  # <-- this is needed to checkout theme which normally come from separate git repository
+
+      - name: Build the website to public directory
+        uses: gaol/actions-hugo@v1
+
+      - name: Deploy the generated website from public sub directory to master branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
+----
+
+This will generate the website from current directory to `public` sub directory.

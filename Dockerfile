@@ -1,13 +1,14 @@
 FROM asciidoctor/docker-asciidoctor
 
-LABEL maintainer="aoingl@gmail.com"
+LABEL maintainer="Leo Gao <aoingl@gmail.com>"
+LABEL com.github.actions.name="Hugo Asciidoctor Action"
+LABEL com.github.actions.description="Action to generate static website using hugo and asciidoctor"
+LABEL com.github.actions.icon="package"
+LABEL com.github.actions.color="blue"
 
 RUN apk add --update git libc6-compat libstdc++ \
     && apk upgrade \
     && apk add --no-cache ca-certificates
-
-LABEL com.github.actions.name="Hugo Asciidoctor Action"
-LABEL com.github.actions.description="Action to generate static website using hugo and asciidoctor"
 
 ENV HUGO_VERSION=0.67.0
 ENV HUGO_TYPE=_extended
